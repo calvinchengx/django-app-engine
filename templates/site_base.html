@@ -3,3 +3,35 @@
 {% block meta %}
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 {% endblock meta %}
+
+{% block extra_head %}
+    <!--[if lte IE 6]>
+      <script type="text/javascript" src="{{ MEDIA_URL }}global/js/DD_belatedPNG_0.0.8a-min.js"></script>
+      <script type="text/javascript">
+	DD_belatedPNG.fix('#wrapper, #main, #contentwrap, #header ul li, #header ul li a, .pagenavigation li a, a.more-link, #footer, #latesttweet, a.comments, .sidebar h2, img');
+      </script>
+      <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}global/css/ie6.css" />
+      <![endif]-->
+{% endblock extra_head %}
+
+{% block header %}
+
+    <div id="header">
+        <h1><a class="logolink" href="/"><img alt="Calvin and Hobbes" src="{{ MEDIA_URL }}global/my_logo_3.png"/></a></h1>
+        <br />
+        <p>(mis)adventures, creative progamming &amp; perspectives.</p>
+        <ul>
+            <li class="first current_page_item"><a title="Blog Posts" href="/">Blog Posts</a></li>
+            <li class="page_item page-item-2"><a title="About" href="/about">About</a></li>
+            <li class="page_item page-item-28"><a title="Contact" href="/contact">Contact</a></li>
+            <li class="last"><a title="Subscribe" class="Feed" href="/feed/rss">subscribe</a></li>
+        </ul>
+    </div>
+    <!-- End Header -->
+
+{% endblock header %}
+
+{% block content %}
+
+
+{% endblock content %}

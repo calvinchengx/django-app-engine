@@ -20,6 +20,7 @@ COMBINE_MEDIA = {
     ),
     'combined-%(LANGUAGE_DIR)s.css': (
         'global/look.css',
+        'global/style.css',
     ),
 }
 
@@ -54,6 +55,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
     'misc.context_processors.site_attributes',
+)
+
+# We will need to define this tuple explicitly in order to use 
+# the improved ragendja template functionality
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.load_template_source',
+    'ragendja.template.app_prefixed_loader',
+    'django.template.loaders.app_directories.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,6 +117,7 @@ INSTALLED_APPS = (
 
     'homepage',
     'misc',
+    'blog', 
 )
 SITE_ATTRIBUTES = {
     'name':'Calvin\'s (Web)log',

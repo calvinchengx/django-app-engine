@@ -1,0 +1,834 @@
+/*
+Theme Name: Grungy Blue
+Theme URI: http://timgweb.org/grungy/
+Description: A grungy personal blog theme.
+Version: 1.0
+Author: Tim Gieseking
+Author URI: http://timgweb.com/
+Tags: grunge, fixed width, two columns, widgets
+*/
+
+/* ================================ BASE CSS ======================================== */
+/* reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+
+/* typography */
+body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#1c1c1c;}
+h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:2.5em;margin-bottom:0.25em;}
+h3 {font-size:1.16em;line-height:1.25;margin-bottom:0.5em;font-weight:bold;}
+h4 {font-size:1.5em;line-height:1.25;margin-bottom:0.5em;color:#019cff;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+h6 {font-size:1em;font-weight:bold;}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+p {margin:0 0 1.5em;}
+p img.left {float:left;margin:1.5em 1.5em 1.5em 0;padding:0;}
+p img.right {float:right;margin:1.5em 0 1.5em 1.5em;}
+a:focus, a:hover {color:#000;}
+a {color:#019cff;text-decoration:underline;}
+blockquote {margin:1.5em;color:#666;font-style:italic;}
+strong {font-weight:bold;}
+em, dfn {font-style:italic;}
+dfn {font-weight:bold;}
+sup, sub {line-height:0;}
+abbr, acronym {border-bottom:1px dotted #666;}
+address {margin:0 0 1.5em;font-style:italic;}
+del {color:#666;}
+pre {margin:1.5em 0;white-space:pre;}
+pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+li ul, li ol {margin:0 1.5em;}
+ul, ol {margin:0 1.5em 1.5em 1.5em;}
+ul {list-style-type:disc;}
+ol {list-style-type:decimal;}
+dl {margin:0 0 1.5em 0;}
+dl dt {font-weight:bold;}
+dd {margin-left:1.5em;}
+table {margin-bottom:1.4em;width:100%;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
+caption {background:#eee;}
+.small {font-size:0.2em;line-height:1.2em;}
+.large {font-size:1.2em;line-height:2.5em;margin-bottom:1.25em;}
+.hide {display:none;}
+.quiet {color:#666;}
+.loud {color:#000;}
+.highlight {background:#ff0;}
+.added {background:#060;color:#fff;}
+.removed {background:#900;color:#fff;}
+.first {margin-left:0;padding-left:0;}
+.last {margin-right:0;padding-right:0;}
+.top {margin-top:0;padding-top:0;}
+.bottom {margin-bottom:0;padding-bottom:0;}
+.alignleft { float: left; margin: 0 1em 1em 0; }
+.alignright { float: right; margin: 0 0 1em 1em; }
+
+/* ================================ Grungy CSS ======================================== */
+body
+{
+	background: #5f5f5f url('images/backgrounds/bg.jpg') repeat-x left top;
+}
+
+/* site structure */
+#wrapper
+{
+	background: transparent url('images/backgrounds/splat.png') no-repeat center top;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	z-index: -99;
+}
+
+#header
+{
+	height: 126px;
+	margin: 0 auto;
+	position: relative;
+	width: 920px;
+}
+
+#main
+{
+	background: transparent url('images/backgrounds/paper_top.png') no-repeat left top;
+	margin: 0 auto;
+	padding: 90px 0 0;
+	position: relative;
+	text-align: left;
+	width: 989px;
+	z-index: 1;
+}
+
+#contentwrap
+{
+	background: transparent url('images/backgrounds/contentshadow.png') repeat-y left top;
+	margin: 0 2px;
+	padding: 0 34px 14px;
+	min-height: 660px;
+	width: 915px;
+	z-index: 1;
+}
+
+#contentwrap:after {
+	content: " ";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+html[xmlns] #contentwrap {
+	display: block;
+}
+ 
+* html #contentwrap {
+	height: 1%;
+}
+
+#contentwrap .content
+{
+	float: left;
+	margin: -40px 0 0;
+	width: 690px;
+}
+
+#contentwrap .sidebar
+{
+	float: right;
+	margin: -40px 0 0;
+	width: 180px;
+}
+
+/* header and navigation */
+#header h1
+{
+	float: left;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+
+#header p
+{
+	color: #bbb;
+	float: left;
+	font-size: 1.2em;
+	margin: 70px 0 0 -260px;
+}
+
+#header h1 img
+{
+	display: block;
+	margin: 16px 0 0 -10px;
+}
+
+#header ul
+{
+	bottom: -30px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: -10px;
+	z-index: 0;
+}
+
+#header ul li
+{
+	background: transparent url('images/nav/standard.png') no-repeat left -104px;
+	display: block;
+	float: left;
+	font-family: "Trebuchet MS", Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	height: 103px;
+	list-style: none;
+	margin: 0;
+	position: relative;
+	text-align: center;
+	text-transform: lowercase;
+	width: 130px;
+}
+
+#header ul li.first
+{
+	background: transparent url('images/nav/standard.png') no-repeat left top;
+	padding-left: 12px;
+	width: 139px;
+}
+
+#header ul li.last
+{
+	background: transparent url('images/nav/standard.png') no-repeat left bottom;
+	padding-right: 5px;
+	width: 137px;
+}
+
+#header ul li a
+{
+	display: block;
+	color: #fff;
+	height: 60px;
+	padding: 43px 0 0 0;
+	text-decoration: none;
+	width: 100%;
+}
+
+#header ul li.current_page_item a
+{
+	color: #111;
+}
+
+#header ul li a:hover
+{
+	color: #ddd;
+}
+
+#header ul li a:focus
+{
+	outline: none;
+}
+
+#header ul li a.feed
+{
+	background: transparent url('images/uisprite.png') no-repeat 119px -384px;
+}
+
+#header ul li a.feed:hover
+{
+	background-position: 119px -427px;
+}
+
+/* content */
+.content h2
+{
+	border-bottom: 1px dashed #ccc;
+	margin: 0 0 1em;
+}
+
+/* blog posts */
+.post
+{
+	margin: 0 0 50px;
+}
+
+.post h2
+{
+	border: none;
+	color: #d60133;
+	font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+	line-height: 1;
+	margin: 0 0 9px;
+	padding: 0 50px 0 0;
+	position: relative;
+}
+
+.post h2 a
+{
+	color: #d60133;
+}
+
+.post h2 a:hover
+{
+	color: #019cff;
+}
+
+.post h3.date
+{
+	color: #333;
+	font-size: 1em;
+	line-height: 1;
+	margin: 0 0 18px;
+	text-transform: uppercase;
+}
+
+.post h2 a,
+.post .postmetadata a
+{
+	text-decoration: none;
+}
+
+.post h2 a:hover,
+.post .postmetadata a:hover
+{
+	text-decoration: underline;
+}
+
+.post h2 a.comments
+{
+	background: transparent url('images/uisprite.png') no-repeat left top;
+	color: #aaa;
+	display: block;
+	font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+	position: absolute;
+	font-size: 14px;
+	font-style: italic;
+	height: 32px;
+	padding: 8px 0 0;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 44px;
+}
+
+.post h2 a.comments:hover
+{
+	background-position: left -40px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.post .entry
+{
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+	padding: 0 0 10px;
+	margin: 0 0 10px;
+}
+
+.post .entry h2
+{
+	color: #1c1c1c;
+	font-size:2.5em;
+	line-height: 1.2;
+	margin-bottom:0.8em;
+	padding: 0;
+}
+
+.post .entry a.more-link
+{
+	background: transparent url('images/uisprite.png') no-repeat 8px -339px;
+	float: right;
+	font-size: 1.33em;
+	line-height: 1;
+	margin: 0 1px 0 0;
+	padding: 6px 8px 6px 18px;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+.post .entry a.more-link:hover
+{
+	background-color: #019cff;
+	background-position: 8px -360px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.post .entry img
+{
+	border: 5px solid #212121;
+	display: block;
+}
+
+.post .postmetadata
+{
+	line-height: 1;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+/* comments */
+#comments h2
+{
+	border: none;
+	margin: 0 0 1em;
+}
+
+#comments .nocomment
+{
+	font-style: italic;
+	margin: 0 0 3em;
+}
+
+#comments h3
+{
+	color: #d60133;
+	font-size: 1.5em;
+	line-height: 1;
+	margin: 0 0 1em 147px;
+	text-transform: uppercase;
+}
+
+ul.commentlist,
+ul.commentlist ul.children
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.commentlist li
+{
+	list-style: none;
+	margin: 0 0 36px;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+}
+
+/* children */
+ul.commentlist li .comment_author
+{
+	color: #999;
+	font-size: 0.83em;
+	float: left;
+	padding: 0 20px 0 0;
+	width: 80px;
+}
+
+ul.commentlist li .comment_author cite
+{
+	color: #333;
+	font-style: normal;
+	font-weight: bold;
+}
+
+ul.commentlist li .comment_author cite a
+{
+	text-decoration: none;
+}
+
+ul.commentlist li .comment_author strong
+{
+	color: #333;
+}
+
+ul.commentlist li .comment_author img
+{
+	border: 1px solid #aaa;
+	max-width: 80px;
+}
+
+ul.commentlist li img.commentimg
+{
+	display: block;
+	float: left;
+	left: 100px;
+	position: absolute;
+	top: 0;
+}
+
+ul.commentlist li .comment_text_container
+{
+	float: right;
+	width: 544px;
+}
+
+ul.commentlist li .comment_text
+{
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	min-height: 19px;
+	padding: 20px;
+}
+
+ul.commentlist li p.metadata
+{
+	clear: both;
+	font-size: 0.88em;
+	line-height: 2;
+	text-align: right;
+}
+
+ul.commentlist li p.metadata a
+{
+	text-decoration: none;
+}
+
+ul.commentlist li p.metadata a.comment_date
+{
+	color: #aaa;
+	font-style: italic;
+}
+
+ul.commentlist li p.metadata a.comment-edit-link,
+ul.commentlist li p.metadata a.comment-reply-link
+{
+	margin: 0 0 0 8px;
+}
+
+ul.commentlist li p.metadata a:hover,
+ul.commentlist li .comment_author cite a:hover
+{
+	text-decoration: underline;
+}
+
+/* children */
+ul.commentlist li ul.children
+{
+	clear: both;
+	margin: 0 0 0 147px;
+}
+
+ul.commentlist li ul.children li .comment_text_container
+{
+	width: 397px;
+}
+
+#comments form
+{
+	display: block;
+	padding: 0 0 0 147px;
+	width: 560px;
+}
+
+#comments textarea, #comments input
+{
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+
+#comments input
+{
+	margin: 0 10px 0 0;
+	width: 260px;
+}
+
+#comments label
+{
+	color: #666;
+	font-size: 0.9em;
+}
+
+#comments textarea
+{
+	height: 100px;
+	width: 520px;
+}
+
+#comments #submit
+{
+	background: #111;
+	color: #fff;
+	cursor: pointer;
+	width: auto;
+}
+
+#comments #submit:hover
+{
+	background: #333;
+}
+
+/* page navigation */
+ul.pagenavigation
+{
+	list-style: none;
+	margin: 0;
+	padding: 14px 0 0;
+}
+
+ul.pagenavigation li
+{
+	display: block;
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.pagenavigation li a
+{
+	background: transparent url('images/uisprite.png') no-repeat 0 -290px;
+	display: block;
+	height: 20px;
+	text-indent: -9999px;
+	width: 100px;
+}
+
+ul.pagenavigation li a:focus
+{
+	outline: none;
+}
+
+ul.pagenavigation li a:hover
+{
+	background-position: 0 -314px;
+}
+
+ul.pagenavigation li:first-child
+{
+	float: left;
+}
+
+ul.pagenavigation li:first-child a
+{
+	background-position: 0 -234px;
+	width: 114px
+}
+
+ul.pagenavigation li:first-child a:hover
+{
+	background-position: 0 -258px;
+}
+
+
+
+/* sidebar */
+.sidebar h2
+{
+	background: transparent url('images/uisprite.png') no-repeat 0 -105px;
+	font-size: 18px;
+	font-weight: normal;
+	height: 30px;
+	line-height: 30px;
+	margin: 0;
+	padding: 0 0 0 27px;
+	text-transform: uppercase;
+	text-wrap: suppress;
+}
+
+.sidebar ul, .sidebar ul li
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar ul li ul, .sidebar ul li div
+{
+	border-top: 1px solid #ddd;
+	list-style: none;
+	margin: 0 0 40px 27px;
+	padding: 3px 0 0;
+}
+
+.sidebar ul li div.textwidget,
+.sidebar ul li div.ads
+{
+	border: none;
+	margin: 0;
+}
+
+.sidebar ul li div.ads
+{
+	margin: 0 0 39px 27px;
+	padding: 1px 0;
+}
+
+.sidebar ul li.widget_text
+{
+	border: none;
+}
+
+.sidebar ul li ul li
+{
+	font-size: 14px;
+	line-height: 24px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	1text-transform: uppercase;
+}
+
+.sidebar ul li a
+{
+	color: #454545;
+	text-decoration: none;
+}
+
+.sidebar ul li a:hover
+{
+	color: #019cff;
+}
+
+.sidebar ul li a.rssfeed,
+.sidebar ul li a.twitter
+{
+	background: transparent url('images/uisprite.png') no-repeat;
+	padding: 0 0 0 22px;
+}
+
+.sidebar ul li a.rssfeed
+{
+	background-position: left -163px;
+}
+
+.sidebar ul li a.twitter
+{
+	background-position: left -200px;
+}
+
+.sidebar .currently_browsing
+{
+	padding: 0 0 0 27px;
+}
+
+.sidebar .currently_browsing
+{
+	font-style: italic;
+	margin: 0 0 40px 0;
+}
+
+.sidebar .ads img
+{
+	1border: 1px solid #181818;
+	display: block;
+	margin: 0 0 10px;
+}
+
+.sidebar .ads a:hover img
+{
+	border: 4px solid #999;
+	margin: -3px -3px 7px;
+}
+
+.sidebar #search
+{
+	border-top: none;
+	margin: 0 0 40px;
+}
+
+.sidebar #search p
+{
+	margin: 0;
+}
+
+.sidebar #search input
+{
+	background: #eee url('images/uisprite.png') no-repeat 137px -510px;
+	border: 1px solid #ddd;
+	color: #999;
+	font-size: 10px;
+	margin: 0 0 0 27px;
+	padding: 5px 15px 5px 5px;
+	width: 129px;
+}
+
+.sidebar div#calendar_wrap
+{
+	margin: 0;
+}
+
+
+/* footer */
+#footer
+{
+	background: transparent url('images/backgrounds/paper_bottom.png') no-repeat left top;
+	clear: both;
+	margin: 0 auto;
+	min-height: 154px;
+	padding: 0 39px;
+	text-align: left;
+	width: 915px;
+}
+
+#latesttweet
+{
+	background: transparent url('images/icons/tweet.png') no-repeat left top;
+	float: right;
+	margin: 32px 0 0;
+	padding: 66px 0 0 0;
+	width: 180px;
+}
+
+#latesttweet p
+{
+	color: #fff;
+	font-size: 1.16em;
+	line-height: 1.3;
+}
+
+#latesttweet a
+{
+	color: #3aa2e2;
+	text-decoration: none;
+}
+
+#latesttweet a:hover
+{
+	color: #f0f0f0;
+}
+
+#flickr
+{
+	float: left;
+	margin: 72px 0 0;
+}
+
+#flickr p
+{
+	color: #3993ff;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+}
+
+#flickr p span
+{
+	color: #ff1c92;
+}
+
+#flickr ul,
+#flickr ul li
+{
+	list-style: none;
+	padding: 0;
+}
+
+#flickr ul
+{
+	margin: 15px 0 0;
+}
+
+#flickr ul li
+{
+	border: 1px solid #111;
+	float: left;
+	margin: 0 8px 0 0;
+}
+
+#flickr img
+{
+	display: block;
+}

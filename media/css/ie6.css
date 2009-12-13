@@ -1,0 +1,14 @@
+/* anyone still browsing with IE6 shouldn't even be using the Internet, 
+   but alas we must account for them anyway. */
+
+#wrapper
+{
+	z-index: 1;
+}
+
+h2,
+.post .entry,
+#search
+{
+	position: relative;
+}
