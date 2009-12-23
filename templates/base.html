@@ -10,7 +10,6 @@
 		{% block css %}
 		<link rel="stylesheet" type="text/css"  media="screen, projection" href="{{ MEDIA_URL }}combined-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
 		<link rel="stylesheet" type="text/css"  media="print" href="{{ MEDIA_URL }}combined-print-{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}.css" />
-        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}global/style.css" />
 		<!--[if IE]>
 		<link rel="stylesheet" type="text/css" media="screen, projection" href="{{ MEDIA_URL }}ie.css">
 		<![endif]-->
@@ -35,12 +34,18 @@
 
             <div id="main">
                 <div id="contentwrap">
+
                     <div class="content">
                         <h2>{% block head_title %}
                             {% endblock head_title %}</h2>
                         {% block content %}
                         {% endblock content %}
-                    </div><!-- End content-->
+                    </div><!--End content-->
+
+                    <div class="sidebar">
+                        {% block sidebar %}
+                        {% endblock sidebar %}
+                    </div><!--End sidebar-->
                 </div><!--End contentwrap-->
             </div><!--End main-->
 
@@ -48,6 +53,7 @@
             </div><!--End footer-->
 
         </div><!--End wrapper-->
+
 
     </body>
 </html>

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load blog_tags %}
+
 {% block meta %}
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 {% endblock meta %}
@@ -32,6 +34,43 @@
 {% endblock header %}
 
 {% block content %}
-
-
 {% endblock content %}
+
+{% block sidebar %}
+    <ul>
+
+        <li class="widget widget_links" id="linkcat-2">
+            <h2 class="widgettitle">Blogroll</h2>
+            {% show_blogroll %}
+        </li>
+
+        <li class="widget widget_categories" id="categories-3">
+            <h2 class="widgettitle">Categories</h2>
+            {% show_categories %}
+        </li>
+
+         <li class="widget widget_text" id="text-3">			
+             <div class="textwidget">
+                 <div class="ads">
+                     <a title="python programming language" 
+                         href="http://www.python.org">
+                         <img alt="Python" 
+                         src="{{ MEDIA_URL }}global/python_logo_w120.png" />
+                     </a>
+                     <a title="django rocks!" 
+                         href="http://www.python.org">
+                         <img alt="Django" 
+                         src="{{ MEDIA_URL }}global/django_logo_w120.png" />
+                     </a>
+                     <a title="google app engine" 
+                         href="http://appengine.google.com">
+                         <img alt="App Engine" 
+                         src="{{ MEDIA_URL }}global/gae_logo_w120.png" />
+                     </a>
+                 </div>
+             </div>
+         </li>			 
+
+    </ul>
+{% endblock sidebar %}
+

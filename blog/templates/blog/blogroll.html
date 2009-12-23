@@ -1,0 +1,14 @@
+
+{% if blogroll %}   
+    <ul>
+    {% for link in blogroll %}
+
+        <li>
+            {% autoescape off %}
+            {{ link }}
+            {% endautoescape %}
+        </li>
+
+    {% endfor %}
+    </ul>
+{% endif %}

@@ -12,7 +12,13 @@ handler500 = 'ragendja.views.server_error'
 urlpatterns = auth_patterns + patterns('',
     ('^admin/(.*)', admin.site.root),
     #(r'^$', 'django.views.generic.simple.direct_to_template',{'template': 'main.html'}),
-    (r'^$', 'homepage.views.index'),
+    #(r'^$', 'homepage.views.index'),
+    (r'^$', 'blog.views.index'),
+
+    # Blog app
+    (r'^category/(?P<name_slug>[^/]+)/$', 'blog.views.category'),
+    url(r'^post/', include('blog.urls')),
+
     # Override the default registration form
     url(r'^account/register/$', 'registration.views.register',
         kwargs={'form_class': UserRegistrationForm},

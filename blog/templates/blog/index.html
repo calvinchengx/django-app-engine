@@ -1,0 +1,64 @@
+{% extends "site_base.html" %}
+
+{% block title %}blog posts{% endblock %}
+
+{% block head_title %}blog posts{% endblock %}
+
+{% block content %}
+    {% for post in post_list %}
+
+        <div id="post-51" class="post-51 post hentry category-examples category-test tag-example-post">
+            <h2>
+                <a title="Permanent link to {{ post.title }}" 
+                    rel="bookmark" 
+                    href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+            <h3 class="date">{{ post.created|timesince:current_time }} ago</h3>
+
+            <div class="entry">
+                {% autoescape off %}
+                {{ post.content|linebreaks }}
+                {% endautoescape %}
+
+                <p>
+                    <a class="more-link" href="{{ post.get_absolute_url }}">more</a>
+                </p>
+            </div><!--End entry-->
+            <p class="postmetadata">
+                {% if post.author %}
+                Posted by <strong>{{ post.author }}</strong>
+                    {% if post.category %}
+                        in <a rel="category tag" 
+                            title="View all posts in {{ post.category }}"
+                            href = "{{ post.category.get_absolute_url }}">{{ post.category }}</a>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+            </p>
+        </div> 
+
+    {% empty %}
+
+        <div id="post-51" class="post-51 post hentry category-examples category-test tag-example-post">
+            <h2>
+                <a title="Permanent Link to Sample Post" rel="bookmark" href="/2009/07/lorem-ipsum/">Sample Post</a> 
+                <a title="Comment on Sample Post" class="comments" href="/2009/07/lorem-ipsum/#comments">5</a>
+            </h2>
+            <h3 class="date">July 26th, 2009</h3>
+
+            <div class="entry">
+                <p><a rel="wp-prettyPhoto[g51]" title="Sample Post" href="{{ MEDIA_URL }}global/images/sample/sample1.jpg"><img class="alignleft size-full wp-image-78" title="sample" alt="sample" src="{{ MEDIA_URL }}global/images/sample/sample1.jpg"/></a>Lorem ipsum.</p>
+                <p>This post shows you how comments on your blog will look, too. Follow the more link to see the full post.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p> <a class="more-link" href="/2009/07/lorem-ipsum/#more-51">more</a></p>
+            </div>
+
+            <p class="postmetadata">Posted by <strong>admin</strong> in <a rel="category tag" title="View all posts in Examples" href="/category/examples/">Examples</a>,  <a rel="category tag" title="View all posts in test" href="/category/test/">test</a> / Tags: <a rel="tag" href="/tag/example-post/">example post</a>
+            </p>
+
+        </div>
+    {% endfor %}
+
+{% endblock content %}

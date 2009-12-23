@@ -1,0 +1,13 @@
+{% extends "site_base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block head_title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+
+    {% autoescape off %}
+    {{ post.content|linebreaks }}
+    {% endautoescape %}
+
+{% endblock content %}

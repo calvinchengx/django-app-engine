@@ -1,0 +1,24 @@
+
+{% extends "site_base.html" %}
+
+{% block title %}All posts in {{ category.name }}{% endblock %}
+
+{% block head_title %}All posts in {{ category.name }}{% endblock %}
+
+{% block content %}
+
+    {% for post in post_list %}
+        <div id="post-51" class="post-51 post hentry category-examples category-test tag-example-post">
+            <h2>
+                <a title="Permanent link to {{ post.title }}" 
+                    rel="bookmark" 
+                    href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+        </div>
+    {% empty %}
+        No posts in this category yet
+    {% endfor %}
+
+{% endblock content %}

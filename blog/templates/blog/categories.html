@@ -1,0 +1,16 @@
+
+{% if c_list %}   
+    <ul>
+    {% for c in c_list %}
+
+        <li>
+            <a href="{{ c.get_absolute_url }}" alt="{{ c.title }}">
+            {% autoescape off %}
+            {{ c }}
+            {% endautoescape %}
+            </a>
+        </li>
+
+    {% endfor %}
+    </ul>
+{% endif %}
