@@ -57,7 +57,6 @@ class Post(db.Model):
         #self.img = db.Blob(self.img)
         #super(Post, self).save()
 
-
 class TagPost(db.Model):
     post = db.ReferenceProperty(Post, required=True, 
                                 collection_name='post')
@@ -66,7 +65,6 @@ class TagPost(db.Model):
 
     def __unicode__(self):
         return '%s is tagged as %s' % (self.post, self.tag)
-
 
 class BlogRoll(db.Model):
     link = db.StringProperty()

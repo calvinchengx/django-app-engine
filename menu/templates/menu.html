@@ -1,0 +1,19 @@
+
+<ul>
+    <li class="first 
+    {% ifequal current_path '/' %}current_page_item{% endifequal %}">
+        <a title="Blog Posts" href="/">Blog Posts</a>
+    </li>
+    <li class="page_item page-item-2
+    {% ifequal current_path '/about/' %}current_page_item{% endifequal %}">
+        <a title="About" href="/about/">About</a>
+    </li>
+    <li class="page_item page-item-28
+    {% ifequal current_path '/contact/' %}current_page_item{% endifequal %}">
+        <a title="Contact" href="/contact/">Contact</a>
+    </li>
+    <li class="last
+    {% ifequal current_path '/feed/rss/' %}current_page_item{% endifequal %}">
+        <a title="Subscribe" class="Feed" href="/feed/rss/">subscribe</a>
+    </li>
+</ul>

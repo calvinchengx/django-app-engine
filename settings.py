@@ -118,8 +118,10 @@ INSTALLED_APPS = (
     'mediautils',
 
     'homepage',
+    'menu',
     'misc',
     'blog', 
+    'contact',
 )
 SITE_ATTRIBUTES = {
     'name':'Calvin\'s (Web)log',

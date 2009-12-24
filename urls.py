@@ -19,6 +19,9 @@ urlpatterns = auth_patterns + patterns('',
     (r'^category/(?P<name_slug>[^/]+)/$', 'blog.views.category'),
     url(r'^post/', include('blog.urls')),
 
+    # Contact app
+    url(r'^contact/', include('contact.urls')),
+
     # Override the default registration form
     url(r'^account/register/$', 'registration.views.register',
         kwargs={'form_class': UserRegistrationForm},

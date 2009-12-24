@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load menu_tags %}
 {% load blog_tags %}
 
 {% block meta %}
@@ -22,12 +23,7 @@
         <h1><a class="logolink" href="/"><img alt="Calvin and Hobbes" src="{{ MEDIA_URL }}global/my_logo_3.png"/></a></h1>
         <br />
         <p>(mis)adventures, creative progamming &amp; perspectives.</p>
-        <ul>
-            <li class="first current_page_item"><a title="Blog Posts" href="/">Blog Posts</a></li>
-            <li class="page_item page-item-2"><a title="About" href="/about">About</a></li>
-            <li class="page_item page-item-28"><a title="Contact" href="/contact">Contact</a></li>
-            <li class="last"><a title="Subscribe" class="Feed" href="/feed/rss">subscribe</a></li>
-        </ul>
+        {% show_menu request.path %}
     </div>
     <!-- End Header -->
 
