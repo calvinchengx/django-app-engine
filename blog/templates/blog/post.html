@@ -6,8 +6,6 @@
 
 {% block content %}
 
-    {% autoescape off %}
-    {{ post.content|linebreaks }}
-    {% endautoescape %}
+    {{ post.content|safe|linebreaks }}
 
 {% endblock content %}
