@@ -15,3 +15,4 @@ def show_categories():
     c_list = Category.all() 
     return {'c_list': c_list}
 
+

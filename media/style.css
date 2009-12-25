@@ -832,3 +832,7 @@ ul.pagenavigation li:first-child a:hover
 {
 	display: block;
 }
+
+.aff {
+    margin-top: 10px;
+}

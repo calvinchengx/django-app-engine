@@ -3,6 +3,8 @@
 {% load menu_tags %}
 {% load blog_tags %}
 
+{% block rss %}{% endblock rss %}
+
 {% block meta %}
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 {% endblock meta %}
@@ -46,25 +48,37 @@
         </li>
 
          <li class="widget widget_text" id="text-3">			
-             <div class="textwidget">
-                 <div class="ads">
+            <h2 class="widgettitle">Affiliations</h2>
+            <ul>
+                <li>
                      <a title="python programming language" 
                          href="http://www.python.org">
-                         <img alt="Python" 
+                         <img class="aff" alt="Python" 
                          src="{{ MEDIA_URL }}global/python_logo_w120.png" />
                      </a>
+                </li>
+                <li>
                      <a title="django rocks!" 
-                         href="http://www.python.org">
-                         <img alt="Django" 
+                         href="http://www.djangoproject.com">
+                         <img class="aff" alt="Django" 
                          src="{{ MEDIA_URL }}global/django_logo_w120.png" />
                      </a>
+                </li>
+                <li>
                      <a title="google app engine" 
                          href="http://appengine.google.com">
-                         <img alt="App Engine" 
+                         <img class="aff" alt="App Engine" 
                          src="{{ MEDIA_URL }}global/gae_logo_w120.png" />
                      </a>
-                 </div>
-             </div>
+                </li>
+                <li>
+                     <a title="Odeon Consulting Group" 
+                         href="http://www.od-eon.com">
+                         <img class="aff" alt="Odeon Consulting Group" 
+                         src="{{ MEDIA_URL }}global/odeon_logo.png" />
+                     </a>
+                </li>
+            </ul>
          </li>			 
 
     </ul>

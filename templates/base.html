@@ -6,6 +6,8 @@
     lang="{% firstof LANGUAGE_CODE 'en' %}">
     <head>
         <link rel="icon" href="{{ MEDIA_URL }}global/calvincoffee.ico" />
+        {% block rss %}{% endblock rss %}
+
 		{% block meta %}{% endblock meta %}
 
 		{% block css %}
@@ -21,6 +23,20 @@
 		{% endblock js %}
 
 		{% block extra-head %}{% endblock %}
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-12197766-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+          })();
+
+        </script>
 
         <title>{% block title %}{% endblock %} 
             | {{ site_attributes.name }}</title>
@@ -54,7 +70,7 @@
             </div><!--End footer-->
 
         </div><!--End wrapper-->
-
+        
 
     </body>
 </html>

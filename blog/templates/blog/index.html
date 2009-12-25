@@ -1,10 +1,20 @@
 {% extends "site_base.html" %}
 
-{% block title %}blog posts{% endblock %}
+{% load blog_tags %}
+{% load pagination_tags %}
 
-{% block head_title %}blog posts{% endblock %}
+{% block rss %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/latest" />
+{% endblock rss %}
+
+{% block title %}Blog Entries{% endblock %}
+
+{% block head_title %}Blog Entries{% endblock %}
 
 {% block content %}
+    
+    {% autopaginate post_list 10 %}
+
     {% for post in post_list %}
 
         <div id="post-51" class="post-51 post hentry category-examples category-test tag-example-post">
@@ -18,9 +28,7 @@
             <h3 class="date">{{ post.created|timesince:current_time }} ago</h3>
 
             <div class="entry">
-                {% autoescape off %}
-                {{ post.content|linebreaks }}
-                {% endautoescape %}
+                {{ post.content|safe|linebreaks|truncatewords_html:100 }}
 
                 <p>
                     <a class="more-link" href="{{ post.get_absolute_url }}">more</a>
@@ -60,5 +68,7 @@
 
         </div>
     {% endfor %}
+
+    {% paginate %}
 
 {% endblock content %}

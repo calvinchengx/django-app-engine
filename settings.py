@@ -81,6 +81,7 @@ MIDDLEWARE_CLASSES = (
     'ragendja.sites.dynamicsite.DynamicSiteIDMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    'pagination.middleware.PaginationMiddleware',
 )
 
 # Google authentication
@@ -122,6 +123,7 @@ INSTALLED_APPS = (
     'misc',
     'blog', 
     'contact',
+    'pagination',
 )
 SITE_ATTRIBUTES = {
     'name':'Calvin\'s (Web)log',

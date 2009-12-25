@@ -49,7 +49,7 @@ class Post(db.Model):
         return '%s' % (self.title)
 
     def get_absolute_url(self):
-        return '/%s/%s' % ('post', self.title_slug)
+        return '/%s/%s' % ('entry', self.title_slug)
 
     #def save(self):
         #import logging

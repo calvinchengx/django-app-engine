@@ -5,6 +5,12 @@ from ragendja.auth.urls import urlpatterns as auth_patterns
 from myapp.forms import UserRegistrationForm
 from django.contrib import admin
 
+from blog.feeds import LatestBlogEntries 
+
+feeds = {
+    'latest': LatestBlogEntries,
+}
+
 admin.autodiscover()
 
 handler500 = 'ragendja.views.server_error'
@@ -15,9 +21,12 @@ urlpatterns = auth_patterns + patterns('',
     #(r'^$', 'homepage.views.index'),
     (r'^$', 'blog.views.index'),
 
+    # Rss feeds
+    (r'^feed/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
+
     # Blog app
     (r'^category/(?P<name_slug>[^/]+)/$', 'blog.views.category'),
-    url(r'^post/', include('blog.urls')),
+    url(r'^entry/', include('blog.urls')),
 
     # Contact app
     url(r'^contact/', include('contact.urls')),
