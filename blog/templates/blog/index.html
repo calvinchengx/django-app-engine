@@ -1,6 +1,7 @@
 {% extends "site_base.html" %}
 
 {% load blog_tags %}
+{% load misc_tags %}
 {% load pagination_tags %}
 
 {% block rss %}
@@ -13,7 +14,7 @@
 
 {% block content %}
     
-    {% autopaginate post_list 10 %}
+    {% autopaginate post_list 2 %}
 
     {% for post in post_list %}
 
@@ -28,7 +29,7 @@
             <h3 class="date">{{ post.created|timesince:current_time }} ago</h3>
 
             <div class="entry">
-                {{ post.content|safe|linebreaks|truncatewords_html:100 }}
+                {{ post.content|safe|spacify|linebreaks|truncatewords_html:100 }}
 
                 <p>
                     <a class="more-link" href="{{ post.get_absolute_url }}">more</a>
