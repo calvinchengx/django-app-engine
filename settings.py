@@ -19,10 +19,18 @@ COMBINE_MEDIA = {
         # See documentation why site_data can be useful:
         # http://code.google.com/p/app-engine-patch/wiki/MediaGenerator
         '.site_data.js',
+
+        # Wymeditor App
+        'wymeditor/jquery.wymeditor.js',
+        'wymeditor/wymeditor_textarea.js',
+        'wymeditor/skins/default/skin.js',
     ),
     'combined-%(LANGUAGE_DIR)s.css': (
         'global/look.css',
         'global/style.css',
+
+        # Wymeditor App
+        'wymeditor/skins/default/skin.css',
     ),
 }
 
@@ -47,7 +55,6 @@ LANGUAGE_CODE = 'en'
 
 # Restrict supported languages (and JS media generation)
 LANGUAGES = (
-    ('de', 'German'),
     ('en', 'English'),
 )
 
@@ -105,6 +112,9 @@ INSTALLED_APPS = (
     # Add blueprint CSS (http://blueprintcss.org/)
     'blueprintcss',
 
+    # Wymeditor
+    'wymeditor',
+
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.admin',
@@ -124,6 +134,7 @@ INSTALLED_APPS = (
     'blog', 
     'contact',
     'pagination',
+    'template_utils',
 )
 SITE_ATTRIBUTES = {
     'name':'Calvin\'s (Web)log',

@@ -19,9 +19,6 @@ def index(request):
     current_time = datetime.datetime.now()
     data = {'post_list': post_list, 'current_time': current_time}
 
-    import logging
-    logging.info("hello there")
-
     return render_to_response(request, 'blog/index.html', data) 
 
 def post(request, title_slug):

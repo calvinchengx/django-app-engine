@@ -53,8 +53,7 @@ class Post(db.Model):
 
     #def save(self):
         #import logging
-        #logging.info(self.img)
-        #self.img = db.Blob(self.img)
+        #logging.info(self.content)
         #super(Post, self).save()
 
 class TagPost(db.Model):

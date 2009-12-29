@@ -10,6 +10,9 @@ class TagAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     exclude = ('created',)
 
+    class Media:
+        pass
+
 class TagPostAdmin(admin.ModelAdmin):
     list_display = ('tag', 'post')
 

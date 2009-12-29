@@ -29,8 +29,7 @@
             <h3 class="date">{{ post.created|timesince:current_time }} ago</h3>
 
             <div class="entry">
-                {{ post.content|safe|spacify|linebreaks|truncatewords_html:100 }}
-
+                {{ post.content|safe|truncatewords_html:100 }}
                 <p>
                     <a class="more-link" href="{{ post.get_absolute_url }}">more</a>
                 </p>
