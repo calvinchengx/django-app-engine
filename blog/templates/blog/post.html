@@ -8,6 +8,12 @@
 
 {% block content %}
 
+    {% if edit_link %}
+    <div style="float: right;"> 
+        <a href="{{ edit_link }}">Edit</a>
+    </div>
+    {% endif %}
+
     {{ post.content|safe|linebreaks }}
 
 {% endblock content %}

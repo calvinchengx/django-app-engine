@@ -29,7 +29,11 @@ def post(request, title_slug):
         post = None
         raise Http404
 
-    data = {'post': post}
+    edit_link = None
+    if request.user == post.author:
+        edit_link = '%s/%s/' % (post.get_absolute_url(), 'edit')
+
+    data = {'post': post, 'edit_link': edit_link}
 
     return render_to_response(request, 'blog/post.html', data) 
     
