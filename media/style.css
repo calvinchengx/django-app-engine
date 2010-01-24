@@ -264,7 +264,8 @@ html[xmlns] #contentwrap {
 .post h2
 {
 	border: none;
-	color: #d60133;
+    color:  #FFC720;
+	1color: #d60133;
 	font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
 	line-height: 1;
 	margin: 0 0 9px;
@@ -274,12 +275,14 @@ html[xmlns] #contentwrap {
 
 .post h2 a
 {
-	color: #d60133;
+	color: #FFC720;
+    1color: #d60133;
 }
 
 .post h2 a:hover
 {
-	color: #019cff;
+	color: #FFC720;
+	1color: #019cff;
 }
 
 .post h3.date
